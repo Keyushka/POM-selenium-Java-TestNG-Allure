@@ -9,6 +9,7 @@ This project contains the following: <br />
 5) Config properties integration <br />
 6) Log4j logging <br />
 7) testng reporting <br />
+8) allure reporting <br />
 
 # Libraries and Frameworks
 1) Selenium - Web automation
@@ -17,7 +18,6 @@ This project contains the following: <br />
 4) Log4J - test logging
 
 # Tools
-1) Intellij
-2) Eclipse
+1) IntelliJ IDEA
 
 
