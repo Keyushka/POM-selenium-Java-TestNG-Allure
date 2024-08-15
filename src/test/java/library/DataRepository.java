@@ -11,10 +11,13 @@ import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class DataRepository {
 	private XSSFSheet sheet;
 	private XSSFWorkbook workbook;
+	private static final Logger logger = LogManager.getLogger(DataRepository.class);
 
 	public DataRepository(String filePath, String sheetName) throws Exception {
 		try {
@@ -22,8 +25,9 @@ public class DataRepository {
 			FileInputStream inputStream = new FileInputStream(file);
 			workbook = new XSSFWorkbook(inputStream);
 			sheet = workbook.getSheet(sheetName);
-		} catch (Exception e) {
-			System.out.println(e);
+		} catch (IOException e) {
+			logger.error("Failed to load Excel file from " + filePath, e);
+			throw new RuntimeException("Failed to load Excel file from " + filePath, e);
 		}
 	}
 

@@ -1,1 +1,9 @@
 /target/
+.idea/
+WebDriver.iml
+*iml
+*.exe
+logs/
+screenshots/
+allure-results/
+allure-report/
