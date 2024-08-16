@@ -1,4 +1,4 @@
-package tests;
+package tests.ui;
 
 import library.Browser;
 import library.ConfigFile;
