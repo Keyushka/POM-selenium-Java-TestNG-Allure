@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="RegressionTest">
-<test thread-count="5" name="TestOne">
+	<test thread-count="5" name="UITests">
 		<classes>
-			<class name="tests.HomeTest"/>
+			<class name="tests.ui.HomeTest"/>
+			<class name="tests.ui.LoginTest"/>
 		</classes>
-	</test> <!-- Test -->
+	</test> <!-- UITests -->
+
+	<test thread-count="5" name="APITests">
+		<classes>
+			<class name="tests.api.HomeTest"/>
+			<class name="tests.api.ReqresTest"/>
+		</classes>
+	</test> <!-- APITests -->
 </suite> <!-- Suite -->
+

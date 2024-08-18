@@ -14,6 +14,7 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class LoginTest {
@@ -29,10 +30,10 @@ public class LoginTest {
     @BeforeTest
     public void browserLaunch() throws Exception {
         // Налаштування Log4j 2
-        Configurator.initialize(null, "src/main/resources/log4j2.xml");
+        Configurator.initialize(null, "log4j2.xml");
         dr = new DataRepository(configFile.getDataRepositoryPath(), "LoginTestDataSheet");
         driver = Browser.StartBrowser(configFile.getBrowserType(), configFile.getURL());
-        driver.manage().timeouts().implicitlyWait(configFile.getWaitDuration(), TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(configFile.getWaitDuration()));
         lp = new LoginPage(driver, logger);
         hp = new HomePage(driver, logger);
         logger.info("---Starting LoginTest---");

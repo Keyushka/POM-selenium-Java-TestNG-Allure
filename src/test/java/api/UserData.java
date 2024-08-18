@@ -7,6 +7,9 @@ public class UserData {
     private String last_name;
     private String avatar;
 
+    public UserData() {
+    }
+
     public UserData(Integer id, String email, String first_name, String last_name, String avatar) {
         this.id = id;
         this.email = email;
